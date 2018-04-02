@@ -1,0 +1,44 @@
+package estudos03;
+
+import java.util.Scanner; // Biblioteca Scanner
+
+public class Estudos01 {
+
+    public static void main(String[] args) throws Exception {
+        Scanner entrada = new Scanner(System.in);
+        float Nota; //Variavel da nota
+        
+        System.out.println("Digite sua nota [0.0 - 10.0]"); // Entra com a nota
+        Nota = entrada.nextFloat(); //Guarda o Valor da nota
+        
+        if (Nota <= 10.0 && Nota >= 0.0){ // Validador de nota, tudo que for inserido diferente disso, será invalido.
+        System.out.println("Nota válida"); // Caso a Nota esteja válida, irár aparecer.
+        }
+        else{
+             System.out.println("Nota Inválida, fechando aplicativo"); // Se o usuario entrar c/ a nota errada, irár aparecer
+             System.out.println("Digite enter para continuar");
+             System.in.read();
+             
+        }
+                
+        
+        if (Nota >= 7){ 
+            System.out.println("Você passou direto");
+        }
+        else if(Nota >= 5 && Nota < 7){
+          System.out.println("Você precisa fazer a recuperação");
+        }
+        else{
+            System.out.println("Não passou direto");
+                             
+            // SE A NOTA FOR MAIOR QUE 7 = Passou direto, 5 ou 6 = Precisa fazer recuperação
+            // Menor de 5 = Reprovado/Não passou direto.           
+       
+       }
+         
+    
+          
+     
+   }
+   
+}
