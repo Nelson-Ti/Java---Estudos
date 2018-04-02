@@ -1,0 +1,38 @@
+package Aula1;
+
+import javax.swing.JOptionPane;
+
+public class Principal {
+
+    //private static double Altura;
+    public static void main(String[] args){
+    
+        double altura, base;
+        String sRaio;
+            
+      JOptionPane.showMessageDialog(null,"Calculando a Area");
+      sRaio = JOptionPane.showInputDialog("digite a base");
+      
+      base = Double.parseDouble(sRaio);
+      
+      
+       sRaio = JOptionPane.showInputDialog("digite a altura");
+      
+     altura = Double.parseDouble(sRaio);
+        
+        double Area = altura*base;
+      
+      
+      
+      
+      //volume = (4* Math.PI  *Math.pow(raio, 3)) /3;
+      JOptionPane.showMessageDialog(null,"A Area é : " + Area, "Area", JOptionPane.INFORMATION_MESSAGE);
+              
+//JOptionPane.INFORMATION_MESSAGE);
+      
+      
+          
+        
+    }
+    }
+
