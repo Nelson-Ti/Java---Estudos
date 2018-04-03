@@ -1,0 +1,30 @@
+
+package javaapplication5;
+import java.util.Scanner;
+public class JavaApplication5 {
+
+  
+    public static void main(String[] args) {
+  int nota [], valor;
+   nota = new int[5];
+  
+   Scanner ler = new Scanner(System.in);
+   
+    System.out.println("Indique os valores");
+    
+    for(int i=0;i<5;i++){
+          System.out.println("Indique o valor " + i); 
+          valor = ler.nextInt(); 
+       nota[i]= valor;
+     }
+    System.out.println("Notas por ordem direta:\n");
+       for(int i=0;i<5;i++){
+       System.out.println("Nota " + i + " = " + nota[i]); 
+    }
+     System.out.println("Notas por ordem inversa:\n");
+    for(int i=4;i>=0;i--){
+
+       System.out.println("Nota " + i + " = " + nota[i]);
+    }
+    }
+    }
