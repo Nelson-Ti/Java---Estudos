@@ -1,0 +1,23 @@
+package Aula1;
+
+import javax.swing.JOptionPane;
+
+public class Principal {
+
+    //private static double Altura;
+    public static void main(String[] args){
+    
+        String idade, nome;
+      
+            
+      JOptionPane.showMessageDialog(null,"Informações");
+      nome = JOptionPane.showInputDialog("Digite seu nome: \n");
+      idade = JOptionPane.showInputDialog("Digite sua Idade: \n");
+      
+      
+     JOptionPane.showMessageDialog(null,"Suas Informaçoes São:  \n " + nome + "\n"  
+                        + idade, "anos", JOptionPane.INFORMATION_MESSAGE);
+                 
+    }
+    }
+
