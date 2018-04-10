@@ -1,0 +1,59 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Lista2_Ex3;
+import java.util.Scanner;
+/**
+ *
+ * @author alunoti
+ */
+public class Lista2_Ex3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    Scanner ler = new Scanner(System.in);
+    int i, n;  
+       
+    System.out.printf("Informe o num de empregados:\n ");
+    n= ler.nextInt();  
+    String nome[] = new String[n];
+    int matricula[] = new int[n];
+    float salario[]= new float[n];    
+    
+    
+    for (i=0; i<n; i++){
+        System.out.println("Informe a nome do empregado "+(i+1)+": "); 
+        nome[i]= ler.next();
+        System.out.println("Informe a matrícula do empregado "+(i+1)+": "); 
+        matricula[i]= ler.nextInt();
+        System.out.println("Informe o salário do empregado "+(i+1)+": "); 
+        salario[i]= ler.nextFloat();
+    }
+    for(i=0; i<n; i++){
+       if (salario[i]>=3000){
+           System.out.println("O salário do funcionário "+(i+1)+" é acima de R$ 3.000,00.\n");
+           System.out.println("O nome do funcionário é: "+nome[i]);
+           System.out.println("A matrícula do funcionário é: "+matricula[i]);
+       }
+       else{
+           System.out.println("Nenhum funcionário recebe acima de R$ 3.000,00");
+           System.out.println("O salário do funcionário "+(i+1)+" é abaixo de R$ 3.000,00.\n");
+           System.out.println("O nome do funcionário é: "+nome[i]);
+           System.out.println("A matrícula do funcionário é: "+matricula[i]);
+       }    
+       }
+       
+       
+                   }  
+       }
+       
+    
+    
+  
+//Use a classe Empregado (lista 1) e construa um vetor de empregados com 
+//dados obtidos via teclado.  Em seguida, imprima na tela as matrículas e os nomes 
+//(em maiúsculas) dos empregados com salário acima de R$ 3.000,00.
