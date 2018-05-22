@@ -1,0 +1,145 @@
+// main
+
+    
+package testaempregadoabstrata;
+
+public class TestaEmpregadoAbstrata {
+
+    
+    public static void main(String[] args) {
+        Empregado  e;
+        
+        Chefe cf= new Chefe("Joao","Silva",1000.0);
+        Comissionado c  = new Comissionado ("Maria", "Silva", 400.0, 3.0, 150);
+        Horista h = new Horista("Pedro","Silva",15.00, 40);
+        
+        e = cf ;  
+        
+        System.out.println("\t\tTrabalhando com classe abstrata\n\n");
+        System.out.printf("\nUsando e de Empregado => %s recebeu R$%.2f\n", 
+                                                   e.toString(), e.getSalario());
+        System.out.printf("\nUsando cf de Chefe    => %s recebeu R$%.2f\n", cf.toString(),cf.getSalario());
+        
+        e = c;
+        System.out.printf("\n\n%s recebeu R$%.2f\n", e.toString(), e.getSalario());
+        System.out.printf("\n%s recebeu R$%.2f\n", c.toString(), c.getSalario());
+        
+        e = h;
+        System.out.printf("\n\n%s recebeu R$%.2f\n", e.toString(), e.getSalario());
+        System.out.printf("\n%s recebeu R$%.2f\n\n", h.toString(), h.getSalario());
+
+    }
+}
+
+//horrista
+package testaempregadoabstrata;
+
+/**
+ *
+ * @author Jane
+ */
+public class Horista extends Empregado {
+	private double peso;    // remuneração paga por hora
+	private double horas;   // horas trabalhadas
+	
+	public Horista(String primNome, String ultNome, double peso, double horas) {
+		super(primNome,ultNome);
+		setPeso(peso);        //outra forma : this.peso = peso;
+		setHoras(horas);     //outra forma: this.horas = horas;
+	}
+	
+	public void setPeso(double valorPorHora)	{    peso = valorPorHora;	}
+	public void setHoras(double horas)	               {   this.horas = horas;	}
+	public String toString ()  	{    return "Horista :  " + super.toString();	}
+	public double getSalario() 	{    return peso * horas;    }   //programa o abstrato
+}
+
+//empregado
+
+package testaempregadoabstrata;
+
+/**
+ *
+ * @author Jane
+ */
+public abstract class Empregado {
+	private String primeiroNome;
+	private String ultimoNome;
+
+	public Empregado(String p, String u)	{
+		primeiroNome = p;
+		ultimoNome = u;
+	}
+		
+	public String getPrimeiroNome()	{
+            return primeiroNome;	 
+        }
+	
+	public String getUltimoNome()	{
+            return ultimoNome;
+        }
+	
+	public String toString() 
+        {
+		return primeiroNome + "  " + ultimoNome;
+	}
+	
+	public abstract double getSalario();     //método abstrato
+	
+}// fim classe Empregado
+
+//comissado
+
+package testaempregadoabstrata;
+
+/**
+ *
+ * @author Jane
+ */
+public class Comissionado extends Empregado {
+	private double salarioSemanal;
+	private double comissao;
+	private int quantidade;
+	
+public Comissionado(String primeiroNome, String ultNome, double salario, double comissao,   int quantidade)   {
+		super(primeiroNome, ultNome);
+		this.salarioSemanal = salario;
+		this.comissao = comissao;
+		this.quantidade = quantidade;
+}
+	
+	//Configura o salário básico semanal
+	public void setSalario(double salario) 	            {	 salarioSemanal = salario;   }
+	
+	public void setComissao(double c)	              {	   comissao = c;           	    }
+	
+	public void setQuantidade (int q) 	              {   	quantidade = q; 	   }
+	
+	// Determina o salario real com ganhos
+	public double getSalario()       {    return salarioSemanal + comissao * quantidade;	}
+	
+        public String toString()         {	return "Comissionado :  " + super.toString();        	}
+
+}
+
+
+//chefe
+
+package testaempregadoabstrata;
+
+public class Chefe extends Empregado {
+	
+	private double salarioSemanal;
+	
+	public Chefe(String pNome, String uNome, double salario)	{
+		super(pNome, uNome);
+		setSalarioSemanal(salario);
+	}
+	
+	public void setSalarioSemanal(double salario)	{  salarioSemanal = salario; }
+	
+	public double getSalario()                      {   return salarioSemanal;    }
+	
+	public String toString() 	                 { return "Chefe : " + super.toString();	}
+}
+
