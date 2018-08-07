@@ -1,0 +1,35 @@
+package aula01;
+
+import java.util.Scanner;
+public class Aula01 {
+    public static void main(String[] args) {
+        
+      Scanner ler = new Scanner(System.in);
+    //Aglomerado de dados
+      double []vetor = new double [10];
+      int i;
+    //Entrada   
+        for(i = 0; i<9; i++){ 
+    System.out.println("Digite um número:");
+        vetor[i] = ler.nextInt();
+    }
+    //Computação
+        for (i = 0; i <9; i++){
+    if ((i % 2) == 0){
+        vetor[i] = vetor[i]*2;
+    }else{
+        vetor[i] = vetor [i]/2;
+    }
+ }
+    //Saída de dados
+     System.out.println("Progama modificado:");
+        for(i=0; i<9; i++){
+     System.out.println(vetor[i]);
+     }
+                
+         }
+    }
+    
+    
+    
+
