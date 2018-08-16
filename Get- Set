@@ -1,0 +1,89 @@
+package test;
+
+public class Carro {
+    public String modelo;
+    
+    private String cor;
+    private int placa;
+    private int ano;
+    private int preco;
+    
+    public Carro (String m, String c, int p, int a, int pc){
+        this.modelo = m;
+        this.cor = c;
+        this.placa = p;
+        this.ano = a;
+        this.preco = pc;
+        
+    }
+    
+    public String getModelo(){
+       return this.modelo;
+    }
+    public void setModelo(String m){
+        this.modelo = m;
+    }
+
+    public int setPlaca(){
+        return this.placa;
+    }    
+     public void setPlaca(int p){
+         this.placa = p;
+        
+     }
+     public String getCor() {
+      	return this.cor;
+      }
+      public void setCor(String c){
+  		this.cor = c;
+      }
+
+     public int getAno() {
+     	return this.ano;
+     }
+     public void setAno(int a){
+ 		this.ano = a;
+     }
+
+     public int getPreco(){
+        return this.preco;
+     }
+     public void setPreco(int pc){
+         this.preco = pc;
+     }
+            
+     public void status(){
+         System.out.println("Modelo Do carro");
+         System.out.println("Modelo:" + this.modelo);
+         System.out.println("cor:" +this.cor);
+         System.out.println("placa:" +this.placa);
+         System.out.println("ano:" +this.ano);
+         System.out.println("Preço:" +this.preco);
+         
+    
+
+     }
+}
+
+---------
+
+
+//main
+package test;
+
+public class TestandoGeteSet {
+
+    public static void main(String[] args) {
+       
+    	Carro c1 = new Carro("COROLA", "Preto", 1424, 2018, 28000);
+        c1.status();
+      
+        Carro c2 = new Carro("GOL", "vermelho", 1782, 2017, 19000);
+        c2.status();
+
+        Carro c3 = new Carro("FIESTA", "cinza", 1269, 2019, 23000);
+        c3.status();
+ 
+    }
+    
+}
